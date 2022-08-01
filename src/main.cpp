@@ -6,14 +6,20 @@ using std::cin;
 
 int main(){
 	string card_num;
+	int total;
 	cout << "Enter your card number";
 	cin >> card_num;
 	cout << card_num << '\n';
-	if (card_num[0] == '4'){
-		cout << "This is a Visa card \n";
-	}
 	for (int i=0;i<card_num.size();i++){
-
-		cout << card_num[i] << '\n';
+		if (i % 2 != 0){
+			cout << card_num[i];
+			int total = card_num[i] * 2;
+			cout << total;
+			cout << '\n';
+		}
+		//for (int j=0;j<i;i++){
+		//	
+		//}
+		//cout << card_num[i] << '\n';
 	}
 }
