@@ -17,9 +17,6 @@ int main(){
 			cout << total;
 			cout << '\n';
 		}
-		//for (int j=0;j<i;i++){
-		//	
-		//}
-		//cout << card_num[i] << '\n';
 	}
+	cout << "Testing out";
 }
