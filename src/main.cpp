@@ -6,30 +6,32 @@ using std::cin;
 
 int main(){
 	string card_num;
-	int total;
-	cout << "Enter your card number";
+	int total = 0;
+	cout << "Enter your card number: ";
 	cin >> card_num; // enter card number
-	cout << card_num << '\n';
+	
 	for (int i=0;i<card_num.size();i++){ // look through each number
 		
-		if (i % 2 != 0){ // if the number is not even add it to the total
-			cout << card_num[i];
-			int total = card_num[i] * 2;
-			if (total >= 10){
-				int num1 = total % 10;
-				int num2 = total / 10
-				cout << num1;
-				cout << num2; 
-				
+		if (i % 2 == 0 || i==0){ // if the number is not even add it to the total
+			int product = (card_num[i] - '0') * 2;
+			if (product >=10){
+				string number = to_string(product);	
+				int add = (number[0] - '0') + (number[1] - '0');
+				total += add;
 			}
-			cout << total;
-			cout << '\n';
+			else{
+				total += product;
+			}	
 		}
-		else if (i%2 == 0){
-			cout << card_num[i]
-			int total = card_num[i] * 1;
-			
+		else if (i%2 != 0){
+			int product = (card_num[i] - '0') * 1;
+			total += product;
 		}
 	}
-	cout << "Testing out";
+	if (total %10 ==0){
+		cout << "The credit card is valid\n";
+	}
+	else{
+		cout << "The credit card is not valid\n";
+	}
 }
