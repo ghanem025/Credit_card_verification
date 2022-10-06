@@ -4,6 +4,19 @@ using namespace std;
 using std::cout;
 using std::cin;
 
+string cardType(int n){
+	switch(n){
+		case 3:
+			return "Amex";
+		case 4:
+			return "Visa";
+		case 5:
+			return "Mastercard";
+		default:
+			return "is not a Visa/mastercard or Amex";
+	}
+}
+
 int main(){
 	string card_num;
 	int total = 0;
@@ -30,6 +43,7 @@ int main(){
 	}
 	if (total %10 ==0){
 		cout << "The credit card is valid\n";
+		cout << "This is a card " << cardType((card_num[0] - '0')) << " card";
 	}
 	else{
 		cout << "The credit card is not valid\n";
