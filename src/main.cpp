@@ -28,10 +28,14 @@ void verify(GtkWidget *widget, GtkWidget *credit_num){
 	GtkEntryBuffer *buf = gtk_entry_get_buffer(GTK_ENTRY(credit_num));
 	const char* name = gtk_entry_buffer_get_text(buf);
 	string card_num(name);
+	int card_size = card_num.size();
 
-	g_print("card_num: %s\n", card_num);
+	if(card_size != 16){
+		cout << "The credit card is not valid\n";
+		return;
+	}
 	
-	for (int i=0;i<card_num.size();i++){ // look through each number
+	for (int i=0;i<card_size;i++){ // look through each number
 		
 		if (i % 2 == 0 || i==0){ // if the number is not even add it to the total
 			int product = (card_num[i] - '0') * 2;
